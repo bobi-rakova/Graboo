@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningToSketch", "LearningToSketch\LearningToSketch.csproj", "{d5333e2e-785e-4bbf-8fdb-d7e07e6f375b}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningToSketchScreens", "LearningToSketch\LearningToSketchScreens\LearningToSketchScreens.csproj", "{bdfacfc3-fef2-4a3b-b895-775ac468c2e2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D5333E2E-785E-4BBF-8FDB-D7E07E6F375B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5333E2E-785E-4BBF-8FDB-D7E07E6F375B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5333E2E-785E-4BBF-8FDB-D7E07E6F375B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5333E2E-785E-4BBF-8FDB-D7E07E6F375B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDFACFC3-FEF2-4A3B-B895-775AC468C2E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDFACFC3-FEF2-4A3B-B895-775AC468C2E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDFACFC3-FEF2-4A3B-B895-775AC468C2E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDFACFC3-FEF2-4A3B-B895-775AC468C2E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

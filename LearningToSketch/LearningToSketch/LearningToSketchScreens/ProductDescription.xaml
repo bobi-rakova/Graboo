@@ -1,0 +1,149 @@
+﻿<mockups:WindowsPhoneChrome 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mockups="clr-namespace:Microsoft.Expression.Prototyping.WindowsPhone.Mockups;assembly=WindowsPhone.Mockups"
+    xmlns:pc="http://schemas.microsoft.com/prototyping/2010/controls"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:pi="http://schemas.microsoft.com/prototyping/2010/interactivity"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    xmlns:wp="http://schemas.microsoft.com/prototyping/2010/controls/windowsphone"
+    mc:Ignorable="d"
+    x:Class="LearningToSketchScreens.ProductDescription"
+    x:Name="PhoneChrome">
+    <i:Interaction.Triggers>
+    	<i:EventTrigger EventName="OrientationChanged">
+    		<i:Interaction.Behaviors>
+    			<ei:ConditionBehavior>
+    				<ei:ConditionalExpression>
+    					<ei:ComparisonCondition LeftOperand="{Binding PageOrientation, ElementName=PhoneChrome}"
+    						RightOperand="Landscape" />
+    				</ei:ConditionalExpression>
+    			</ei:ConditionBehavior>
+    		</i:Interaction.Behaviors>
+    		<mockups:GoToStateAction StateName="Landscape"
+    			TargetObject="{Binding ElementName=LayoutRoot}"
+    			TargetName="LayoutRoot" />
+    	</i:EventTrigger>
+    	<i:EventTrigger EventName="OrientationChanged">
+    		<i:Interaction.Behaviors>
+    			<ei:ConditionBehavior>
+    				<ei:ConditionalExpression>
+    					<ei:ComparisonCondition LeftOperand="{Binding PageOrientation, ElementName=PhoneChrome}"
+    						RightOperand="Portrait" />
+    				</ei:ConditionalExpression>
+    			</ei:ConditionBehavior>
+    		</i:Interaction.Behaviors>
+    		<mockups:GoToStateAction StateName="Portrait"
+    			TargetObject="{Binding ElementName=LayoutRoot}"
+    			TargetName="LayoutRoot" />
+    	</i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <mockups:WindowsPhoneChrome.BackButton>
+        <Button Style="{StaticResource Chrome-Button}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <pi:NavigateBackAction />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <Image Source="/AppBarIcons/back.png" />
+        </Button>
+    </mockups:WindowsPhoneChrome.BackButton>
+
+    <mockups:WindowsPhoneChrome.HomeButton>
+        <Button Style="{StaticResource Chrome-Button}">
+            <Image Source="/AppBarIcons/home.png" />
+        </Button>
+    </mockups:WindowsPhoneChrome.HomeButton>
+
+    <mockups:WindowsPhoneChrome.SearchButton>
+        <Button Style="{StaticResource Chrome-Button}">
+            <Image Source="/AppBarIcons/search.png" />
+        </Button>
+    </mockups:WindowsPhoneChrome.SearchButton>
+
+	<Grid x:Name="LayoutRoot">
+		<VisualStateManager.CustomVisualStateManager>
+			<ei:ExtendedVisualStateManager />
+		</VisualStateManager.CustomVisualStateManager>
+		<VisualStateManager.VisualStateGroups>
+			<VisualStateGroup x:Name="CommonStates"
+				ei:ExtendedVisualStateManager.UseFluidLayout="True">
+				<VisualState x:Name="Portrait" />
+				<VisualState x:Name="Landscape">
+					<Storyboard>
+						<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(WindowsPhoneChrome.PageOrientation)"
+							Storyboard.TargetName="PhoneChrome">
+							<DiscreteObjectKeyFrame KeyTime="0">
+								<DiscreteObjectKeyFrame.Value>
+									<mockups:PageOrientation>Landscape</mockups:PageOrientation>
+								</DiscreteObjectKeyFrame.Value>
+							</DiscreteObjectKeyFrame>
+						</ObjectAnimationUsingKeyFrames>
+					</Storyboard>
+				</VisualState>
+			</VisualStateGroup>
+		</VisualStateManager.VisualStateGroups>
+		<wp:Panorama Title="ЖИТЕН ДАР Ръжено брашно и Мед" VerticalAlignment="Top" Foreground="#FFE41937">
+			
+			<wp:PanoramaItem Header="В мен има" Foreground="#FFE41937">
+				<Grid>
+					<Image Margin="66,216,24,7" Source="3d_pie_chart.jpg" Stretch="Fill" RenderTransformOrigin="0.533,-0.007"/>
+					<Image HorizontalAlignment="Left" Margin="8,-1,0,0" Source="Images/3D-JitenDar-New.jpg" Stretch="Fill" Width="164" Height="123" VerticalAlignment="Top"/>
+					
+							
+					<TextBlock Style="{StaticResource TextBlock-Sketch}" FontSize="24" VerticalAlignment="Top" 
+						TextWrapping="Wrap" Margin="196,26,8,0"
+					><Run Text="ЖИТЕН ДАР Ръжено брашно и Мед"/></TextBlock>
+					<TextBlock Style="{StaticResource TextBlock-Sketch}" FontSize="24" VerticalAlignment="Top" 
+						TextWrapping="Wrap" Margin="0,116,0,0"
+					><Run Text="Хрупкави бисквити с неустоим вкус на мед. Порция от 4-5 бисквити съдържа само 131 калории. A ето и повече за състава:"/></TextBlock>
+					
+							
+				</Grid>
+			</wp:PanoramaItem>
+			<wp:PanoramaItem Header="Твоята оценка" Foreground="#FFE41937">
+				<Grid>
+					<TextBlock Style="{StaticResource TextBlock-Sketch}" FontSize="24" VerticalAlignment="Top"><Run Text="Би ли ме препоръчал на"/><Run Text="приятелите">
+							<Run.Foreground>
+								<SolidColorBrush Color="#FF2E60C2">
+									<SolidColorBrush.RelativeTransform>
+										<MatrixTransform Matrix="Identity"/>
+									</SolidColorBrush.RelativeTransform>
+									<SolidColorBrush.Transform>
+										<MatrixTransform Matrix="Identity"/>
+									</SolidColorBrush.Transform>
+								</SolidColorBrush>
+							</Run.Foreground>
+						</Run><Run Text=" си?"/></TextBlock>
+					<Image Margin="8,45,0,0" Source="niceStar.png" Stretch="Fill" HorizontalAlignment="Left" Height="56" VerticalAlignment="Top" Width="64" RenderTransformOrigin="0.214,-0.077"/>
+					<Image Margin="72,45,0,0" Source="niceStar.png" Stretch="Fill" HorizontalAlignment="Left" Height="56" VerticalAlignment="Top" Width="64" RenderTransformOrigin="0.214,-0.077"/>
+					<Image Margin="138,45,0,0" Source="niceStar.png" Stretch="Fill" HorizontalAlignment="Left" Height="56" VerticalAlignment="Top" Width="64" RenderTransformOrigin="0.214,-0.077"/>
+					<Image Margin="204,45,152,0" Source="niceStar.png" Stretch="Fill" Height="56" VerticalAlignment="Top" RenderTransformOrigin="0.214,-0.077"/>
+					<Image Margin="0,45,84,0" Source="niceStar.png" Stretch="Fill" Height="56" VerticalAlignment="Top" RenderTransformOrigin="0.214,-0.077" HorizontalAlignment="Right" Width="64"/>
+					<TextBlock Style="{StaticResource TextBlock-Sketch}" FontSize="24" Text="Интеграция със социални мрежи..." Margin="0,130,0,0" />
+				</Grid>
+			</wp:PanoramaItem>
+			<wp:PanoramaItem Header="Мен ме направи" Foreground="#FFE41937">
+				<Grid>
+					<Image Margin="0,-12,-32,0" Source="Images/Nestle_shoko.jpg" HorizontalAlignment="Right" VerticalAlignment="Top" Height="168" />	
+					<TextBlock Style="{StaticResource BasicTextBlock-Sketch}" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="21.333" Margin="0,37,18,0"><Run FontWeight="Bold"/><LineBreak/><Run FontWeight="Bold" Text="ЖИТЕН ДАР"/><LineBreak/><LineBreak/>
+						<Run Text="Марката NESTLÉ ЖИТЕН ДАР"/><LineBreak/>
+						<Run Text="се ражда като плод на ценния опит на NESTLÉ в производството на висококачествени бисквити, съчетан с българските традиции, и като отговор на нуждите на българските семейства да разчитат на разнообразна гама вкусни бисквити, които съдържат полезни съставки..."/></TextBlock>
+				</Grid>
+				
+			</wp:PanoramaItem>
+			<wp:PanoramaItem Header="Също като мен" Foreground="#FFE41937">
+				<Grid>
+					<Image Margin="0,69,0,0" Source="Images/3D-JitenDar-Ca.jpg" Stretch="Fill" HorizontalAlignment="Left" Height="151" VerticalAlignment="Top" Width="206"/>
+					<Image Margin="78,0,118,38" Source="Images/Zitendar_obikn.jpg" Stretch="Fill" Height="212" VerticalAlignment="Bottom"/>
+					<Image Margin="184,0,22,30" Source="Images/Zitendar_petit.jpg" Stretch="Fill" Height="220" VerticalAlignment="Bottom"/>
+					<Image Margin="184,21,22,295" Source="Images/3D-JitenDar-Wheat.jpg" Stretch="Fill" Height="151"/>
+				</Grid>
+			</wp:PanoramaItem>
+			
+		</wp:Panorama>
+	</Grid>
+</mockups:WindowsPhoneChrome>
